@@ -1,10 +1,8 @@
 ﻿
 
-<div align="center">
-  <img src="docs/assets/screenshot-editor.png" alt="ibuku Writing Studio Interface" width="100%" style="border-radius: 12px; box-shadow: 0 12px 36px rgba(0,0,0,0.5);" />
-</div>
 
-*Note: This software was developed with the assistant of AI. Certain parts of the code have been generated using LLMs. However, the software does not collect any data from the user. The software is open source and free to use. The software is licensed under the AGPL v3 license.*
+
+
 
 ---
 
@@ -39,22 +37,18 @@ Writing a novel shouldn't require juggling four separate paid subscriptions. **i
 * **Side-by-Side & Inline Highlighting**: Select any passage to attach notes, plot questions, or revision reminders using a 6-color palette.
 * **Zero-Leakage Export Guarantee**: All comments and annotations are automatically stripped upon publishing, guaranteeing clean, professional files.
 
-### Interactive Narrative Timeline Studio
+
 * **Multi-Strand Plotting**: Track main plots, subplots, and character arcs simultaneously.
 * **Flexible Timescales**: Zoom from granular hours and days to months and years.
 * **Visual Collision Lanes**: Prevent continuity errors and impossible character overlaps before you finish your draft.
 
-<div align="center">
-  <img src="docs/assets/screenshot-timeline.png" alt="ibuku Timeline Studio" width="85%" style="border-radius: 10px; margin: 1rem 0;" />
-</div>
+
 
 ### Deep Worldbuilding Codex
 * **Character Dossiers**: Document archetypes, character arcs, physical appearances, psychological traits, and backstory secrets.
 * **Sensory Location Dossiers**: Capture sight, sound, smell, weather, history, hazards, and connected characters for every setting.
 
-<div align="center">
-  <img src="docs/assets/screenshot-codex.png" alt="ibuku Codex Studio" width="85%" style="border-radius: 10px; margin: 1rem 0;" />
-</div>
+
 
 ### Built-In Book Cover Designer
 * Craft typography-rich, custom book covers without leaving the app.
@@ -199,7 +193,5 @@ You are free to use, modify, and redistribute this software in accordance with t
 
 ---
 
-<div align="center">
-  <sub>Crafted with passion for novelists, storytellers, and authors everywhere.</sub>
-</div>
+
 
