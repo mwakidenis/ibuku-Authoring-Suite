@@ -1,6 +1,6 @@
 ﻿<div align="center">
 
-  <img src="docs/assets/ibuku-logo.svg" alt="ibuku Logo" width="96" height="96" />
+  <img src="docs/assets/ibuku-logo.png" alt="ibuku Logo" width="96" height="96" />
 
   # ibuku
 
