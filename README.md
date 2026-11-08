@@ -1,23 +1,39 @@
-﻿
+﻿<div align="center">
 
+  <img src="docs/assets/ibuku-logo.svg" alt="ibuku Logo" width="96" height="96" />
 
+  # ibuku
 
+  **The Premier All-in-One Authoring & Publishing Studio for Novelists**
 
-# The Premier All-in-One Authoring & Publishing Studio for Novelists
+  *Distraction-free writing, dual-view author comments, visual narrative timelines, worldbuilding codex, offline neural audio proofreading, book cover designer, and print-ready PDF / EPUB 3 typesetter.*
 
-Distraction-free writing, dual-view author comments, visual narrative timelines, worldbuilding codex, offline neural audio proofreading, book cover designer, and print-ready PDF / EPUB 3 typesetter.
+  [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+  [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Web-purple.svg)](#cross-platform--downloads)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178c6.svg)](https://www.typescriptlang.org/)
+  [![Tauri](https://img.shields.io/badge/Tauri-v2-24c8db.svg)](https://tauri.app/)
+  [![React](https://img.shields.io/badge/React-18-61dafb.svg)](https://react.dev/)
+  [![Local-First](https://img.shields.io/badge/Privacy-100%25%20Local--First-emerald.svg)](#100-local-first--private)
 
-**License:** AGPL v3 &nbsp;|&nbsp; **Platform:** Windows | macOS | Web &nbsp;|&nbsp; **TypeScript** · **Tauri** · **React** &nbsp;|&nbsp; **Local-First**
+  <br />
 
-[Launch Online Studio](https://mwakidenis.github.io/ibuku/app/) &bull; [Website & Tour](https://mwakidenis.github.io/ibuku/) &bull; [Get Desktop App on Gumroad](https://mwakidenis.gumroad.com/l/ibuku)
+  [**Launch Online Studio**](https://mwakidenis.github.io/ibuku/app/) •
+  [**Website & Tour**](https://mwakidenis.github.io/ibuku/) •
+  [**Get Desktop App on Gumroad**](https://mwakidenis.gumroad.com/l/ibuku)
 
-## Chronicle Writing Studio Interface
+</div>
+
+<br />
+
+<div align="center">
+  <img src="docs/assets/screenshot-editor.png" alt="ibuku Writing Studio Interface" width="100%" style="border-radius: 12px; box-shadow: 0 12px 36px rgba(0,0,0,0.5);" />
+</div>
 
 *Note: This software was developed with the assistant of AI. Certain parts of the code have been generated using LLMs. However, the software does not collect any data from the user. The software is open source and free to use. The software is licensed under the AGPL v3 license.*
 
 ---
 
-## Why ibuku?
+## 🌟 Why ibuku?
 
 Writing a novel shouldn't require juggling four separate paid subscriptions. **ibuku** unifies the entire creative pipeline into one cohesive, distraction-free powerhouse:
 
@@ -27,7 +43,7 @@ Writing a novel shouldn't require juggling four separate paid subscriptions. **i
 * Replaces **Plottr / Aeon Timeline** with visual, multi-strand narrative timelines that prevent plot-hole collisions.
 * Replaces paid **TTS proofreaders** with private, on-device Kokoro Text-to-Speech voice audio.
 
-### 100% Local-First & Private
+### 🛡️ 100% Local-First & Private
 * **Zero Telemetry**: ibuku collects no metrics, no trackers, and has no remote database.
 * **100% GenAI-Free. No LLMs. No text generation. Built exclusively for human writers.**
 * **No Cloud Lock-in**: Your work is saved in the open `.ibuku` format (a standard ZIP archive containing plain JSON and raw XHTML).
@@ -37,39 +53,43 @@ Writing a novel shouldn't require juggling four separate paid subscriptions. **i
 
 ---
 
-## Key Features
+## 🚀 Key Features
 
-### Distraction-Free Chapter Authoring
+### 🖋️ Distraction-Free Chapter Authoring
 * **Modern WYSIWYG Canvas**: Pure, zero-jitter writing experience with customizable typography, margins, and line spacing.
 * **Chapter Binder & Splitter**: Reorder chapters with drag-and-drop or split large scenes at cursor position in one click.
 * **Live Word Count & Goals**: Track chapter lengths, overall manuscript progress, and daily word targets.
 
-### Dual-View Author Comments
+### 💬 Dual-View Author Comments
 * **Side-by-Side & Inline Highlighting**: Select any passage to attach notes, plot questions, or revision reminders using a 6-color palette.
 * **Zero-Leakage Export Guarantee**: All comments and annotations are automatically stripped upon publishing, guaranteeing clean, professional files.
 
-
+### 🕸️ Interactive Narrative Timeline Studio
 * **Multi-Strand Plotting**: Track main plots, subplots, and character arcs simultaneously.
 * **Flexible Timescales**: Zoom from granular hours and days to months and years.
 * **Visual Collision Lanes**: Prevent continuity errors and impossible character overlaps before you finish your draft.
 
+<div align="center">
+  <img src="docs/assets/screenshot-timeline.png" alt="ibuku Timeline Studio" width="85%" style="border-radius: 10px; margin: 1rem 0;" />
+</div>
 
-
-### Deep Worldbuilding Codex
+### 📖 Deep Worldbuilding Codex
 * **Character Dossiers**: Document archetypes, character arcs, physical appearances, psychological traits, and backstory secrets.
 * **Sensory Location Dossiers**: Capture sight, sound, smell, weather, history, hazards, and connected characters for every setting.
 
+<div align="center">
+  <img src="docs/assets/screenshot-codex.png" alt="ibuku Codex Studio" width="85%" style="border-radius: 10px; margin: 1rem 0;" />
+</div>
 
-
-### Built-In Book Cover Designer
+### 🎨 Built-In Book Cover Designer
 * Craft typography-rich, custom book covers without leaving the app.
 * Configure titles, subtitles, author credits, backgrounds, gradients, borders, and decorative emblems with high-resolution export.
 
-### Offline Kokoro TTS Voices
+### 🔊 Offline Kokoro TTS Voices
 * Listen to your chapters read aloud by state-of-the-art Kokoro TTS voice models running directly on your computer via WebGPU / WASM.
 * Catch clunky phrasing, dialogue hitches, and typos without sending a single byte of your story to external servers.
 
-### Publication-Grade Exporters
+### 📄 Publication-Grade Exporters
 * **Print PDF**: Automated book formatting with mirror margins, running headers, drop caps, Roman numeral front matter, and proper chapter page breaks.
 * **Standard EPUB 3**: Valid, reflowable EPUB files verified for Amazon Kobo, Kindle, and Apple Books.
 * **Shunn Manuscript Format (DOCX)**: Formats your manuscript strictly according to the industry-standard William Shunn format for literary agent and editor submissions.
@@ -77,7 +97,7 @@ Writing a novel shouldn't require juggling four separate paid subscriptions. **i
 
 ---
 
-## Cross-Platform & Downloads
+## 🖥️ Cross-Platform & Downloads
 
 ibuku is available as both a native standalone desktop app (Windows & macOS) and an in-browser web app:
 
@@ -91,7 +111,7 @@ ibuku is available as both a native standalone desktop app (Windows & macOS) and
 
 ---
 
-## Development & Building
+## 🛠️ Development & Building
 
 ### Prerequisites
 * [Node.js](https://nodejs.org/) (v18.0.0 or later)
@@ -139,17 +159,17 @@ npm run build:docs:all
 
 ---
 
-## Project Architecture
+## 🏗️ Project Architecture
 
 ```
 ibuku/
-└── docs/                     # GitHub Pages presentation site & live Web Studio
-    ├── app/                  # Compiled in-browser ibuku Web Studio
-    ├── assets/               # High-res showcase screenshots & brand assets
-    ├── downloads/            # Staged standalone desktop binaries (ibuku.exe)
-    ├── index.html            # Showcase landing page
-    ├── main.js               # Dynamic OS detector & interactive showcase logic
-    └── style.css             # Landing page modern design system
+├── docs/                     # GitHub Pages presentation site & live Web Studio
+│   ├── app/                  # Compiled in-browser ibuku Web Studio
+│   ├── assets/               # High-res showcase screenshots & brand assets
+│   ├── downloads/            # Staged standalone desktop binaries (ibuku.exe)
+│   ├── index.html            # Showcase landing page
+│   ├── main.js               # Dynamic OS detector & interactive showcase logic
+│   └── style.css             # Landing page modern design system
 ├── public/                   # Static web assets & icons
 ├── scripts/                  # Build & publishing automation
 │   ├── build-docs.js         # Builds in-browser studio into docs/app/
@@ -176,7 +196,7 @@ ibuku/
 
 ---
 
-## Open File Format (.ibuku)
+## 📦 Open File Format (`.ibuku`)
 
 ibuku believes your stories belong to you forever. A `.ibuku` file is an unencrypted standard ZIP archive that can be opened by any archive utility (7-Zip, PeaZip, Archive Utility):
 
@@ -194,7 +214,7 @@ my-novel.ibuku (ZIP)
 
 ---
 
-## License
+## 📜 License
 
 ibuku is proudly free, open-source software licensed under the **GNU Affero General Public License v3 (AGPLv3)**.
 
@@ -204,5 +224,6 @@ You are free to use, modify, and redistribute this software in accordance with t
 
 ---
 
-
-
+<div align="center">
+  <sub>Crafted with passion for novelists, storytellers, and authors everywhere.</sub>
+</div>
