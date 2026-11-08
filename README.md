@@ -8,12 +8,12 @@
 
   *Distraction-free writing, dual-view author comments, visual narrative timelines, worldbuilding codex, offline neural audio proofreading, book cover designer, and print-ready PDF / EPUB 3 typesetter.*
 
-  [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-  [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Web-purple.svg)](#cross-platform--downloads)
-  [![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178c6.svg)](https://www.typescriptlang.org/)
-  [![Tauri](https://img.shields.io/badge/Tauri-v2-24c8db.svg)](https://tauri.app/)
-  [![React](https://img.shields.io/badge/React-18-61dafb.svg)](https://react.dev/)
-  [![Local-First](https://img.shields.io/badge/Privacy-100%25%20Local--First-emerald.svg)](#100-local-first--private)
+  [License: AGPL v3](https://www.gnu.org/licenses/agpl-3.0)
+  [Platform: Windows | macOS | Web](#cross-platform--downloads)
+  [TypeScript](https://www.typescriptlang.org/)
+  [Tauri](https://tauri.app/)
+  [React](https://react.dev/)
+  [Local-First](https://www.typescriptlang.org/#100-local-first--private)
 
   <br />
 
@@ -24,10 +24,6 @@
 </div>
 
 <br />
-
-<div align="center">
-  <img src="docs/assets/screenshot-editor.png" alt="ibuku Writing Studio Interface" width="100%" style="border-radius: 12px; box-shadow: 0 12px 36px rgba(0,0,0,0.5);" />
-</div>
 
 *Note: This software was developed with the assistant of AI. Certain parts of the code have been generated using LLMs. However, the software does not collect any data from the user. The software is open source and free to use. The software is licensed under the AGPL v3 license.*
 
@@ -68,10 +64,6 @@ Writing a novel shouldn't require juggling four separate paid subscriptions. **i
 * **Multi-Strand Plotting**: Track main plots, subplots, and character arcs simultaneously.
 * **Flexible Timescales**: Zoom from granular hours and days to months and years.
 * **Visual Collision Lanes**: Prevent continuity errors and impossible character overlaps before you finish your draft.
-
-<div align="center">
-  <img src="docs/assets/screenshot-timeline.png" alt="ibuku Timeline Studio" width="85%" style="border-radius: 10px; margin: 1rem 0;" />
-</div>
 
 ### 📖 Deep Worldbuilding Codex
 * **Character Dossiers**: Document archetypes, character arcs, physical appearances, psychological traits, and backstory secrets.
