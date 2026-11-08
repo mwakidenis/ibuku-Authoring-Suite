@@ -1,0 +1,224 @@
+import {
+  X,
+  MessageSquare,
+  Trash2,
+  Edit2,
+  ExternalLink,
+  Quote,
+  Clock,
+  Eye,
+  EyeOff,
+  PanelRightClose,
+  PanelRightOpen,
+} from 'lucide-react';
+import { AuthorComment } from '../../types/project';
+import { useEpub } from '../../context/EpubContext';
+import { useTranslation } from '../../i18n/I18nContext';
+import { useSidebarDrawer } from '../../hooks/useSidebarDrawer';
+
+interface CommentsSidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
+  chapterTitle?: string;
+  comments: AuthorComment[];
+  activeCommentId: string | null;
+  onSelectComment: (comment: AuthorComment) => void;
+  onDeleteComment: (commentId: string) => void;
+  onJumpToHighlight: (commentId: string) => void;
+}
+
+export const CommentsSidebar: React.FC<CommentsSidebarProps> = ({
+  isOpen,
+  onClose,
+  chapterTitle,
+  comments,
+  activeCommentId,
+  onSelectComment,
+  onDeleteComment,
+  onJumpToHighlight,
+}) => {
+  const {
+    showCommentHighlights,
+    toggleCommentHighlights,
+    setShowCommentHighlights,
+    isCommentsSidebarDocked,
+    setIsCommentsSidebarDocked,
+  } = useEpub();
+  const { t } = useTranslation();
+
+  const panelRef = useSidebarDrawer<HTMLElement>({
+    isOpen,
+    isDocked: isCommentsSidebarDocked,
+    onClose,
+    toggleButtonSelector: '[data-sidebar-toggle="comments"]',
+  });
+
+  if (!isOpen) return null;
+
+  return (
+    <aside
+      ref={panelRef}
+      className={`comments-sidebar-drawer ${!isCommentsSidebarDocked ? 'floating-panel' : 'docked-panel'}`}
+      aria-label="Chapter Comments"
+    >
+      {/* Header */}
+      <div className="comments-sidebar-header">
+        <div className="comments-sidebar-title-row">
+          <MessageSquare size={16} className="text-accent" />
+          <h3 className="comments-sidebar-title">{t('comments.title')}</h3>
+          <span className="badge badge-sm">{comments.length}</span>
+        </div>
+        <div className="comments-sidebar-header-actions">
+          <button
+            type="button"
+            className={`btn-icon btn-sm ${!showCommentHighlights ? 'active' : ''}`}
+            onClick={toggleCommentHighlights}
+            title={showCommentHighlights ? t('comments.hiddenStatus') : t('comments.visibleStatus')}
+            aria-label={showCommentHighlights ? t('comments.hiddenStatus') : t('comments.visibleStatus')}
+            style={{
+              color: !showCommentHighlights ? 'var(--accent-warning, #f59e0b)' : undefined,
+            }}
+          >
+            {showCommentHighlights ? <Eye size={15} /> : <EyeOff size={15} />}
+          </button>
+          <button
+            type="button"
+            className={`btn-icon btn-sm ${isCommentsSidebarDocked ? 'active' : ''}`}
+            onClick={() => setIsCommentsSidebarDocked(prev => !prev)}
+            title={isCommentsSidebarDocked ? t('common.float') : t('common.dock')}
+            aria-label={isCommentsSidebarDocked ? t('common.float') : t('common.dock')}
+            style={{
+              color: isCommentsSidebarDocked ? 'var(--accent-primary)' : undefined,
+            }}
+          >
+            {isCommentsSidebarDocked ? <PanelRightClose size={15} /> : <PanelRightOpen size={15} />}
+          </button>
+          <button
+            type="button"
+            className="btn-icon btn-sm"
+            onClick={onClose}
+            aria-label={t('common.close')}
+            title={t('common.close')}
+          >
+            <X size={15} />
+          </button>
+        </div>
+      </div>
+
+      {chapterTitle && (
+        <div className="comments-sidebar-subhead">
+          <span>{t('statusBar.activeChapter')}: {chapterTitle}</span>
+        </div>
+      )}
+
+      {/* Highlights Visibility Bar */}
+      <div className="comments-visibility-bar">
+        <div className="comments-visibility-status">
+          <span className={`comments-visibility-dot ${showCommentHighlights ? 'active' : 'hidden'}`} />
+          <span className="comments-visibility-text">
+            {showCommentHighlights ? t('comments.visibleStatus') : t('comments.hiddenStatus')}
+          </span>
+        </div>
+        <button
+          type="button"
+          className="comments-visibility-toggle-btn"
+          onClick={toggleCommentHighlights}
+          title={showCommentHighlights ? t('comments.hide') : t('comments.show')}
+        >
+          {showCommentHighlights ? t('comments.hide') : t('comments.show')}
+        </button>
+      </div>
+
+      {/* List / Empty State */}
+      <div className="comments-sidebar-list">
+        {comments.length === 0 ? (
+          <div className="comments-empty-state">
+            <div className="comments-empty-icon">
+              <MessageSquare size={26} />
+            </div>
+            <h4>{t('comments.noCommentsYet')}</h4>
+            <p>
+              {t('comments.noCommentsDesc')}
+            </p>
+          </div>
+        ) : (
+          comments.map(c => {
+            const isActive = activeCommentId === c.id;
+            return (
+              <div
+                key={c.id}
+                className={`comment-card ${isActive ? 'active' : ''}`}
+                style={{ borderLeftColor: c.color }}
+                onClick={() => {
+                  if (!showCommentHighlights) {
+                    setShowCommentHighlights(true);
+                  }
+                  onJumpToHighlight(c.id);
+                  onSelectComment(c);
+                }}
+              >
+                {/* Quote Header */}
+                <div className="comment-card-quote">
+                  <Quote size={11} className="comment-card-quote-icon" />
+                  <span className="comment-card-quote-text">
+                    {c.selectedText}
+                  </span>
+                </div>
+
+                {/* Comment Note */}
+                <p className="comment-card-body">{c.comment}</p>
+
+                {/* Footer / Meta & Actions */}
+                <div className="comment-card-footer">
+                  <div className="comment-card-date">
+                    <Clock size={10} />
+                    <span>
+                      {new Date(c.createdAt).toLocaleDateString(undefined, {
+                        month: 'short',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </span>
+                  </div>
+
+                  <div className="comment-card-actions" onClick={e => e.stopPropagation()}>
+                    <button
+                      type="button"
+                      className="btn-icon btn-xs"
+                      onClick={() => {
+                        if (!showCommentHighlights) {
+                          setShowCommentHighlights(true);
+                        }
+                        onJumpToHighlight(c.id);
+                      }}
+                      title={t('comments.jumpToHighlight')}
+                    >
+                      <ExternalLink size={12} />
+                    </button>
+                    <button
+                      type="button"
+                      className="btn-icon btn-xs"
+                      onClick={() => onSelectComment(c)}
+                      title={t('comments.editNote')}
+                    >
+                      <Edit2 size={12} />
+                    </button>
+                    <button
+                      type="button"
+                      className="btn-icon btn-xs text-danger"
+                      onClick={() => onDeleteComment(c.id)}
+                      title={t('common.delete')}
+                    >
+                      <Trash2 size={12} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          })
+        )}
+      </div>
+    </aside>
+  );
+};
