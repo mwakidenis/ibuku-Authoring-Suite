@@ -72,7 +72,7 @@ Writing a novel shouldn't require juggling four separate paid subscriptions. **i
 
 ---
 
-## ðŸ’» Cross-Platform & Downloads
+## Cross-Platform & Downloads
 
 ibuku is available as both a native standalone desktop app (Windows & macOS) and an in-browser web app:
 
