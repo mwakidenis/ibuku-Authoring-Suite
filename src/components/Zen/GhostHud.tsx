@@ -1,0 +1,304 @@
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
+import { useEpub } from '../../context/EpubContext';
+import { BookOpen, Sparkles, ChevronUp, Check, Search, X } from 'lucide-react';
+import { useTranslation } from '../../i18n/I18nContext';
+import { useZenMouseActivity } from '../../hooks/useZenMouseActivity';
+
+export const GhostHud: React.FC = () => {
+  const {
+    book,
+    isZenMode,
+    setZenMode,
+    activeChapter,
+    setActiveChapterId,
+    todayWordsCount,
+    zenSettings,
+  } = useEpub();
+  const { t } = useTranslation();
+
+  const [isVisible, setIsVisible] = useState<boolean>(true);
+  const [isChapterMenuOpen, setIsChapterMenuOpen] = useState<boolean>(false);
+  const [isHovering, setIsHovering] = useState<boolean>(false);
+  const [chapterSearch, setChapterSearch] = useState<string>('');
+
+  const hideTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const menuCloseTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const isHoveringRef = useRef<boolean>(false);
+  const isMenuOpenRef = useRef<boolean>(false);
+
+  const clearMenuCloseTimer = () => {
+    if (menuCloseTimerRef.current) {
+      clearTimeout(menuCloseTimerRef.current);
+      menuCloseTimerRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    isHoveringRef.current = isHovering;
+  }, [isHovering]);
+
+  useEffect(() => {
+    isMenuOpenRef.current = isChapterMenuOpen;
+  }, [isChapterMenuOpen]);
+
+  // Filter chapters based on quick search
+  const filteredChapters = useMemo(() => {
+    if (!book?.chapters) return [];
+    if (!chapterSearch.trim()) return book.chapters;
+    const q = chapterSearch.toLowerCase();
+    return book.chapters.filter(ch => ch.title.toLowerCase().includes(q));
+  }, [book?.chapters, chapterSearch]);
+
+  useEffect(() => {
+    if (!isZenMode || !zenSettings.ghostHud) {
+      return;
+    }
+
+    // Show initially when entering Zen mode, then fade out after 3.5s if not hovering
+    setIsVisible(true);
+    if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+    hideTimerRef.current = setTimeout(() => {
+      if (!isHoveringRef.current && !isMenuOpenRef.current) {
+        setIsVisible(false);
+      }
+    }, 3500);
+
+    return () => {
+      if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+      clearMenuCloseTimer();
+    };
+  }, [isZenMode, zenSettings.ghostHud]);
+
+  const handleRealMouseMove = useCallback(() => {
+    setIsVisible(true);
+    if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+    hideTimerRef.current = setTimeout(() => {
+      if (!isHoveringRef.current && !isMenuOpenRef.current) {
+        setIsVisible(false);
+      }
+    }, 3000);
+  }, []);
+
+  const handleZenKeyDown = useCallback((e: KeyboardEvent) => {
+    // If chapter menu is open and Escape is pressed, close chapter menu first
+    if (e.key === 'Escape' && isMenuOpenRef.current) {
+      e.stopPropagation();
+      setIsChapterMenuOpen(false);
+      clearMenuCloseTimer();
+      return;
+    }
+
+    // Don't hide if pressing Escape or modifier keys alone
+    if (
+      e.key === 'Escape' ||
+      e.key === 'Control' ||
+      e.key === 'Alt' ||
+      e.key === 'Shift' ||
+      e.key === 'Meta' ||
+      e.ctrlKey ||
+      e.metaKey
+    ) {
+      return;
+    }
+
+    // Instantly fade out HUD and close menu as soon as typing begins
+    setIsChapterMenuOpen(false);
+    setIsVisible(false);
+    clearMenuCloseTimer();
+    if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+  }, []);
+
+  useZenMouseActivity(
+    Boolean(isZenMode && zenSettings.ghostHud),
+    handleRealMouseMove,
+    handleZenKeyDown
+  );
+
+  if (!isZenMode || !zenSettings.ghostHud || !book) {
+    return null;
+  }
+
+  return (
+    <div
+      className={`ghost-hud-container ${isVisible ? 'visible' : 'hidden'} ${isHovering ? 'hovered' : 'translucent'}`}
+      onMouseEnter={() => {
+        setIsHovering(true);
+        if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+      }}
+      onMouseLeave={() => {
+        setIsHovering(false);
+        if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+        hideTimerRef.current = setTimeout(() => {
+          setIsVisible(false);
+        }, 2000);
+        if (isChapterMenuOpen) {
+          clearMenuCloseTimer();
+          menuCloseTimerRef.current = setTimeout(() => {
+            setIsChapterMenuOpen(false);
+          }, 600);
+        }
+      }}
+      aria-label="Zen Mode Quick Status"
+    >
+      {/* Chapter Dropdown Popover (Floating above HUD) */}
+      {isChapterMenuOpen && (
+        <div
+          className="ghost-hud-chapter-menu"
+          onMouseEnter={clearMenuCloseTimer}
+          onMouseLeave={() => {
+            clearMenuCloseTimer();
+            menuCloseTimerRef.current = setTimeout(() => {
+              setIsChapterMenuOpen(false);
+            }, 600);
+          }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Popover Header with Title and Count */}
+          <div className="ghost-chapter-menu-header">
+            <div className="ghost-chapter-menu-header-title">
+              <BookOpen size={13} />
+              <span>{t('sidebar.chapters')}</span>
+            </div>
+            <span className="ghost-chapter-menu-count">
+              {book.chapters.length}
+            </span>
+          </div>
+
+          {/* Search Box */}
+          <div className="ghost-chapter-search-wrap">
+            <Search size={13} className="ghost-search-icon" />
+            <input
+              type="text"
+              className="ghost-chapter-search-input"
+              placeholder={t('zen.searchChapters')}
+              value={chapterSearch}
+              onChange={(e) => setChapterSearch(e.target.value)}
+              autoFocus
+            />
+            {chapterSearch && (
+              <button
+                type="button"
+                className="ghost-search-clear"
+                onClick={() => setChapterSearch('')}
+                title={t('sidebar.clearSearch')}
+              >
+                <X size={12} />
+              </button>
+            )}
+          </div>
+
+          {/* Chapters Scrollable List */}
+          <div className="ghost-chapter-menu-list">
+            {filteredChapters.length === 0 ? (
+              <div
+                className="ghost-chapter-empty"
+                style={{
+                  padding: '12px',
+                  textAlign: 'center',
+                  color: 'rgba(255, 255, 255, 0.4)',
+                  fontSize: '0.76rem',
+                }}
+              >
+                {t('zen.noChaptersFound')}
+              </div>
+            ) : (
+              filteredChapters.map((ch, index) => {
+                const isActive = ch.id === activeChapter?.id;
+                const parentFolder = ch.folderId ? book.folders?.find(f => f.id === ch.folderId) : null;
+                const displayNum = String(index + 1).padStart(2, '0');
+
+                return (
+                  <button
+                    key={ch.id}
+                    type="button"
+                    className={`ghost-chapter-menu-item ${isActive ? 'active' : ''}`}
+                    onClick={() => {
+                      setActiveChapterId(ch.id);
+                      setIsChapterMenuOpen(false);
+                      setChapterSearch('');
+                    }}
+                  >
+                    <div className="ghost-chapter-item-left">
+                      <span className="ghost-chapter-number">{displayNum}.</span>
+                      <span className="ghost-chapter-item-title" title={ch.title}>
+                        {parentFolder && (
+                          <span className="ghost-chapter-folder-tag">
+                            {parentFolder.name}
+                          </span>
+                        )}
+                        {ch.title || `${t('statusBar.activeChapter')} ${index + 1}`}
+                      </span>
+                    </div>
+                    <div className="ghost-chapter-item-right">
+                      <span className="ghost-chapter-words">
+                        {ch.wordCount.toLocaleString()} w
+                      </span>
+                      {isActive && <Check size={12} className="ghost-chapter-active-check" />}
+                    </div>
+                  </button>
+                );
+              })
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Main Floating Capsule HUD */}
+      <div
+        className="ghost-hud"
+        role="toolbar"
+        aria-label="Zen Mode Ghost HUD"
+      >
+        {/* Interactive Translucent Chapter Trigger */}
+        <div
+          className={`ghost-hud-section ghost-hud-chapter ghost-hud-interactive ${isChapterMenuOpen ? 'active' : ''}`}
+          onMouseEnter={() => {
+            setIsChapterMenuOpen(true);
+            clearMenuCloseTimer();
+          }}
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsChapterMenuOpen(prev => {
+              const next = !prev;
+              if (!next) clearMenuCloseTimer();
+              return next;
+            });
+          }}
+          title={t('zen.manuscript')}
+        >
+          <BookOpen size={14} className="ghost-hud-icon" />
+          <span className="ghost-hud-text">
+            {activeChapter?.title || t('zen.manuscript')}
+          </span>
+          <ChevronUp
+            size={12}
+            className={`ghost-hud-chevron ${isChapterMenuOpen ? 'rotated' : ''}`}
+          />
+        </div>
+
+        <div className="ghost-hud-divider" />
+
+        {/* Session Words Written Today */}
+        <div className="ghost-hud-section ghost-hud-words">
+          <Sparkles size={13} className="ghost-hud-sparkle-icon" />
+          <span>
+            {`+${todayWordsCount.toLocaleString()} ${t('zen.words')} ${t('zen.today')}`}
+          </span>
+        </div>
+
+        <div className="ghost-hud-divider" />
+
+        {/* Exit Button */}
+        <button
+          type="button"
+          className="ghost-hud-exit-btn"
+          onClick={() => setZenMode(false)}
+          title={t('zen.exitZen')}
+        >
+          <span>{t('zen.exitZen').split(' (')[0]}</span>
+          <kbd className="ghost-kbd">Esc</kbd>
+        </button>
+      </div>
+    </div>
+  );
+};
