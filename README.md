@@ -13,8 +13,6 @@ Distraction-free writing, dual-view author comments, visual narrative timelines,
 
 ## Chronicle Writing Studio Interface
 
-<img src="docs/assets/screenshot-editor.png" alt="ibuku Writing Studio Interface" width="100%" style="border-radius: 12px; box-shadow: 0 12px 36px rgba(0,0,0,0.5);" />
-
 *Note: This software was developed with the assistant of AI. Certain parts of the code have been generated using LLMs. However, the software does not collect any data from the user. The software is open source and free to use. The software is licensed under the AGPL v3 license.*
 
 ---
