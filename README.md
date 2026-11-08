@@ -8,18 +8,9 @@
 
   *Distraction-free writing, dual-view author comments, visual narrative timelines, worldbuilding codex, offline neural audio proofreading, book cover designer, and print-ready PDF / EPUB 3 typesetter.*
 
-  [License: AGPL v3](https://www.gnu.org/licenses/agpl-3.0)
-  [Platform: Windows | macOS | Web](#cross-platform--downloads)
-  [TypeScript](https://www.typescriptlang.org/)
-  [Tauri](https://tauri.app/)
-  [React](https://react.dev/)
-  [Local-First](https://www.typescriptlang.org/#100-local-first--private)
-
   <br />
 
-  [**Launch Online Studio**](https://mwakidenis.github.io/ibuku/app/) •
-  [**Website & Tour**](https://mwakidenis.github.io/ibuku/) •
-  [**Get Desktop App on SourceForge**](https://sourceforge.net/projects/ibuku-authoring-suite/))
+  [**Get Desktop App on SourceForge**](https://sourceforge.net/projects/ibuku-authoring-suite/)
 
 </div>
 
