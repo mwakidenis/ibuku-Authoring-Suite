@@ -19,7 +19,7 @@
 
   [**Launch Online Studio**](https://mwakidenis.github.io/ibuku/app/) •
   [**Website & Tour**](https://mwakidenis.github.io/ibuku/) •
-  [**Get Desktop App on Gumroad**](https://mwakidenis.gumroad.com/l/ibuku)
+  [**Get Desktop App on SourceForge**](https://sourceforge.net/projects/ibuku-authoring-suite/))
 
 </div>
 
@@ -96,10 +96,10 @@ ibuku is available as both a native standalone desktop app (Windows & macOS) and
 | Platform | Format | Description | Download / Launch |
 | :--- | :--- | :--- | :--- |
 | **In-Browser** | Web Studio | Runs client-side in Chrome, Edge, Safari, Firefox | [**Launch Online**](https://mwakidenis.github.io/ibuku/app/) |
-| **Desktop App** | Windows (`.exe`) & macOS (`.dmg`) | Standalone desktop app — **Pay What You Want ($0+)** | [**Get on Gumroad**](https://mwakidenis.gumroad.com/l/ibuku) |
+| **Desktop App** | Windows (`.exe`) & macOS (`.dmg`) | Standalone desktop app — **Pay What You Want ($0+)** | [**Get on SourceForge**](https://sourceforge.net/projects/ibuku-authoring-suite/) |
 
 > [!TIP]
-> The desktop application does not need an installer or administrative rights. Get it on [Gumroad](https://mwakidenis.gumroad.com/l/ibuku) for free or with an optional donation to support open-source software! Open it, and start writing immediately.
+> The desktop application does not need an installer or administrative rights. Get it on [SourceForge](https://sourceforge.net/projects/ibuku-authoring-suite/) for free or with an optional donation to support open-source software! Open it, and start writing immediately.
 
 ---
 
