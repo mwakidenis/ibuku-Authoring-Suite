@@ -170,14 +170,14 @@ export const CloudFileBrowserModal: React.FC<CloudFileBrowserModalProps> = ({ on
   };
 
   const formatFileSize = (bytes: number): string => {
-    if (!bytes || bytes <= 0) return 'â€”';
+    if (!bytes || bytes <= 0) return '—';
     if (bytes < 1024) return `${bytes} B`;
     if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
     return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
   };
 
   const formatDate = (isoString: string | null): string => {
-    if (!isoString) return 'â€”';
+    if (!isoString) return '—';
     try {
       const d = new Date(isoString);
       return d.toLocaleDateString(undefined, {
@@ -677,7 +677,7 @@ export const CloudFileBrowserModal: React.FC<CloudFileBrowserModalProps> = ({ on
 
                           {/* Size */}
                           <td style={{ padding: '0.65rem 0.85rem', color: 'var(--text-muted)' }}>
-                            {isDir ? 'â€”' : formatFileSize(file.size)}
+                            {isDir ? '—' : formatFileSize(file.size)}
                           </td>
 
                           {/* Modified Date */}
