@@ -94,7 +94,7 @@ async function verifyShowreel() {
       const buffer = Buffer.from(res.data, 'base64');
       const filePath = path.join(OUTPUT_DIR, item.name);
       fs.writeFileSync(filePath, buffer);
-      console.log(`âœ“ Rendered ${item.name} (${buffer.length} bytes) â€” ${item.desc}`);
+      console.log(`âœ“ Rendered ${item.name} (${buffer.length} bytes) — ${item.desc}`);
     }
 
     console.log('All 9 promo_video_2 showreel test frames verified successfully!');
