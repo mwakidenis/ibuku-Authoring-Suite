@@ -1,6 +1,6 @@
 [package]
 name = "ibuku"
-version = "1.0.0"
+version = "1.0.1"
 description = "ibuku - Authoring Suite"
 authors = ["mwakidenis <Mwakidenice@gmail.com>"]
 license = "AGPL-3.0-or-later"

@@ -1,6 +1,6 @@
 ﻿import { isTauri } from '../cloud/webdavClient';
 
-export const CURRENT_VERSION = '1.0.0';
+export const CURRENT_VERSION = '1.0.1';
 export const GUMROAD_DOWNLOAD_URL = 'https://mwakidenis.gumroad.com/l/ibuku';
 export const GUMROAD_DONATE_URL = 'https://mwakidenis.gumroad.com/l/ibuku';
 export const ALTERNATIVETO_URL = 'https://alternativeto.net/software/ibuku--a-better-way-to-write/about/';
