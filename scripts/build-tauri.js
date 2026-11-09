@@ -526,7 +526,7 @@ export function runBuild() {
   }
 
   console.log('\n========================================================');
-  console.log('   ibuku â€¢ Building Native Tauri Desktop App');
+  console.log('   ibuku • Building Native Tauri Desktop App');
   console.log('========================================================');
   console.log(` Host Platform : ${isWindows ? 'Windows (win32)' : isMac ? 'macOS (darwin)' : isLinux ? 'Linux (linux)' : platform}`);
   console.log(` Target Mode   : ${targetMode}`);
