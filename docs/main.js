@@ -1,5 +1,5 @@
 ﻿/**
- * ibuku Presentation Website â€” Interactive Literary Sanctuary Logic
+ * ibuku Presentation Website — Interactive Literary Sanctuary Logic
  * Starlight Celestial Canvas, Showcase Tour, Hotspots & Lightbox
  */
 
@@ -237,35 +237,35 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       tabId: 'tab-writer',
       tag: 'Chapter Authoring',
-      title: "Writer's Sanctuary â€” Clean Distraction-Free Composition & Annotations",
+      title: "Writer's Sanctuary — Clean Distraction-Free Composition & Annotations",
       src: 'assets/screenshot-editor.png',
       tryUrl: 'app/index.html?view=editor&welcome=false'
     },
     {
       tabId: 'tab-timeline',
       tag: 'Narrative Chronology',
-      title: 'Timeline Studio â€” Visual Story Arcs & Collision-Free Plot Beats',
+      title: 'Timeline Studio — Visual Story Arcs & Collision-Free Plot Beats',
       src: 'assets/screenshot-timeline.png',
       tryUrl: 'app/index.html?view=timeline&welcome=false'
     },
     {
       tabId: 'tab-reader',
       tag: 'Sensory Immersion',
-      title: 'Reading & Acoustic Studio â€” Paper Tones & On-Device Voice Audio',
+      title: 'Reading & Acoustic Studio — Paper Tones & On-Device Voice Audio',
       src: 'assets/screenshot-reader.png',
       tryUrl: 'app/index.html?view=reader&welcome=false'
     },
     {
       tabId: 'tab-codex',
       tag: 'Living Codex',
-      title: 'World Codex â€” Living Characters, Sensory Places & Archetypes',
+      title: 'World Codex — Living Characters, Sensory Places & Archetypes',
       src: 'assets/screenshot-codex.png',
       tryUrl: 'app/index.html'
     },
     {
       tabId: 'tab-publishing',
       tag: 'Fine Typesetting',
-      title: 'Publishing Hub â€” Print-Ready PDF with Drop Caps, EPUB 3 & Shunn DOCX',
+      title: 'Publishing Hub — Print-Ready PDF with Drop Caps, EPUB 3 & Shunn DOCX',
       src: 'assets/screenshot-styles.png',
       tryUrl: 'app/index.html'
     }
