@@ -443,7 +443,7 @@ export const LibraryView: React.FC = () => {
                           ) : (
                             <span>{item.fileType.toUpperCase()}</span>
                           )}
-                          <span className="shelf-meta-dot">â€¢</span>
+                          <span className="shelf-meta-dot">•</span>
                           <span>{formatRelativeTime(item.lastOpened)}</span>
                         </div>
                       </div>
