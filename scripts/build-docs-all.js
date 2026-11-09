@@ -115,7 +115,7 @@ try {
   const manifest = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
   console.log(`\nðŸ“¦ Staged Executables for ${manifest.platform.toUpperCase()}:`);
   for (const item of manifest.distributables) {
-    console.log(`    â€¢ ${item.name} (${item.sizeMB} MB)`);
+    console.log(`    • ${item.name} (${item.sizeMB} MB)`);
   }
 } catch {
   // Ignored
