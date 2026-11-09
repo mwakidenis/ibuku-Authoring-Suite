@@ -208,7 +208,7 @@ blockquote {
   
   <p><em>"Curiouser and curiouser!"</em> cried Alice (she was so much surprised, that for the moment she quite forgot how to speak good English); <em>"now I'm opening out like the largest telescope that ever was! Good-bye, feet!"</em> (for when she looked down at her feet, they seemed to be almost out of sight, they were getting so far off).</p>
 
-  <p><em>"Oh, my poor little feet, I wonder who will put on your shoes and stockings for you now, dears? I'm sure I shan't be able! I shall be a great deal too far off to trouble myself about you: you must manage the best way you can; â€” but I must be kind to them,"</em> thought Alice, <em>"or perhaps they won't walk the way I want to go! Let me see: I'll give them a new pair of boots every Christmas."</em></p>
+  <p><em>"Oh, my poor little feet, I wonder who will put on your shoes and stockings for you now, dears? I'm sure I shan't be able! I shall be a great deal too far off to trouble myself about you: you must manage the best way you can; — but I must be kind to them,"</em> thought Alice, <em>"or perhaps they won't walk the way I want to go! Let me see: I'll give them a new pair of boots every Christmas."</em></p>
 
   <h2>Crying an Ocean</h2>
   <p>And she went on planning to herself how she would manage it. <em>"They must go by the carrier,"</em> she thought; <em>"and how funny it'll seem, sending presents to one's own feet! And how odd the directions will look!"</em></p>
@@ -228,7 +228,7 @@ blockquote {
   <h1>CAPÃTULO III</h1>
   <h2>Uma Corrida Eleitoral e uma Longa HistÃ³ria</h2>
   
-  <p>Era, de fato, uma assembleia de aspecto curioso reunida na margem â€” pÃ¡ssaros de penas desgrenhadas, animais com pelos empapados, todos encharcados, irritados e desconfortÃ¡veis.</p>
+  <p>Era, de fato, uma assembleia de aspecto curioso reunida na margem — pÃ¡ssaros de penas desgrenhadas, animais com pelos empapados, todos encharcados, irritados e desconfortÃ¡veis.</p>
 
   <p>A primeira questÃ£o, evidentemente, era como se secar novamente: realizaram uma consulta e, apÃ³s alguns minutos, pareceu bem natural para Alice conversar familiarmente com todos eles.</p>
 
@@ -251,7 +251,7 @@ blockquote {
   <h1>CHAPTER III</h1>
   <h2>A Caucus-Race and a Long Tale</h2>
   
-  <p>They were indeed a queer-looking party that assembled on the bank â€” the birds with draggled feathers, the animals with their fur clinging close to them, and all dripping wet, cross, and uncomfortable.</p>
+  <p>They were indeed a queer-looking party that assembled on the bank — the birds with draggled feathers, the animals with their fur clinging close to them, and all dripping wet, cross, and uncomfortable.</p>
 
   <p>The first question of course was, how to get dry again: they had a consultation about this, and after a few minutes it seemed quite natural to Alice to find herself talking familiarly with them, as if she had known them all her life.</p>
 
