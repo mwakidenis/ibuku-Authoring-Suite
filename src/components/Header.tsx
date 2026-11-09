@@ -164,7 +164,7 @@ export const Header: React.FC = () => {
 
             <div
               className="brand-badge brand-badge-clickable"
-              title="ibuku Minimalist Mode â€¢ Distraction-free authoring"
+              title="ibuku Minimalist Mode • Distraction-free authoring"
               style={{ cursor: 'default' }}
             >
               <Feather size={16} style={{ color: 'var(--accent-primary)' }} />
@@ -543,7 +543,7 @@ export const Header: React.FC = () => {
             <button
               className="btn btn-ghost btn-sm header-btn-collapsible header-snapshots-btn"
               onClick={() => setIsSnapshotsModalOpen(true)}
-              title="Story Snapshots (Manuscript Time Machine) â€” Capture milestones & history (Alt+S)"
+              title="Story Snapshots (Manuscript Time Machine) — Capture milestones & history (Alt+S)"
               disabled={isLoading || !book}
               style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: '0.35rem' }}
             >
