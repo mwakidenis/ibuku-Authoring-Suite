@@ -1,4 +1,4 @@
-﻿# ibuku Studio â€” User Interface Guide & Handbook
+﻿# ibuku Studio — User Interface Guide & Handbook
 
 Welcome to the **ibuku Studio User Interface Handbook**. ibuku is a unified, 100% local-first authoring, worldbuilding, and publishing suite built exclusively for novelists, storytellers, and long-form prose writers.
 
@@ -169,7 +169,7 @@ Click the **"Timeline"** tab to open the multi-strand narrative plotting matrix.
 *Figure 5.2: Story Event editing dialog showing title, duration, track lane assignment, narrative description, and linked characters.*
 
 > **Continuity & Collision Prevention**:  
-> By distributing parallel plotlines across multiple horizontal lanes, ibuku makes impossible character overlaps instantly visibleâ€”such as a character appearing in two distant places at the same time.
+> By distributing parallel plotlines across multiple horizontal lanes, ibuku makes impossible character overlaps instantly visible—such as a character appearing in two distant places at the same time.
 
 ---
 
@@ -246,8 +246,8 @@ Clicking **"Print-Ready Vector PDF (.pdf)"** launches the **PDF Book Typesetting
    Toggle whether your manuscript's graphic book cover (designed in the Cover tab or imported) is rendered as the first page of the printed book.
 2. **Automatically Add Chapter Titles** (`includeChapterTitles`):
    When enabled, ibuku automatically typesets standardized chapter headings (e.g., *Chapter 1: Down the Rabbit Hole*) at the head of each chapter page. If your chapter drafts already contain custom stylized titles in the manuscript body, disable this option to prevent duplicate headings.
-3. **Include `~ â€¢ ~` Decorative Ornament** (`includeOrnament`):
-   Controls whether the classic ornamental flourish (`~ â€¢ ~`) is displayed beneath chapter titles and at scene break dividers.
+3. **Include `~ • ~` Decorative Ornament** (`includeOrnament`):
+   Controls whether the classic ornamental flourish (`~ • ~`) is displayed beneath chapter titles and at scene break dividers.
 4. **Include Publish Date** (`includePubDate`):
    Toggle the display of the publication year and publisher imprint line on the title and copyright front matter page.
 5. **Table of Contents Position** (`None` / `Start` / `End`):
