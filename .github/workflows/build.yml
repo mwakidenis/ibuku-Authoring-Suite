@@ -1,0 +1,49 @@
+name: Build Desktop App
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Setup Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install Windows build dependencies
+        run: |
+          winget install Microsoft.VisualStudio.2022.BuildTools
+        continue-on-error: true
+
+      - name: Build web frontend
+        run: npm run build
+
+      - name: Build Tauri desktop app (Windows)
+        run: npm run tauri:build
+        env:
+          TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+          TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
+
+      - name: Upload release artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ibuku-windows-x64
+          path: src-tauri/target/release/ibuku.exe
+          retention-days: 7
