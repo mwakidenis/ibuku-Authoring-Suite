@@ -4971,7 +4971,7 @@ export const EpubProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       const now = new Date();
       const formattedDate = now.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
       const formattedTime = now.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
-      const defaultName = name?.trim() || `Snapshot â€” ${formattedDate}, ${formattedTime}`;
+      const defaultName = name?.trim() || `Snapshot — ${formattedDate}, ${formattedTime}`;
 
       const snapshotData: StorySnapshotData = {
         metadata: JSON.parse(JSON.stringify(currentBook.metadata)),
