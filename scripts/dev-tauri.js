@@ -13,7 +13,7 @@ import { isWindows, isLinux, ensureCargoInPath, checkLinuxPrerequisites } from '
 syncVersion();
 
 console.log('\n========================================================');
-console.log('   ibuku â€¢ Starting Tauri Desktop Dev Server');
+console.log('   ibuku • Starting Tauri Desktop Dev Server');
 console.log('========================================================\n');
 
 // Ensure Cargo / Rust is in PATH
