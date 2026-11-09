@@ -2045,7 +2045,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                           style={{ paddingRight: '2.4rem' }}
                           value={password}
                           onChange={e => setPassword(e.target.value)}
-                          placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+                          placeholder="••••••••••••••••"
                         />
                         <button
                           type="button"
@@ -2695,7 +2695,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                         </span>
                       </div>
                       <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '3px' }}>
-                        Open-source AGPL-3.0 authoring suite â€¢ 100% Local-first
+                        Open-source AGPL-3.0 authoring suite • 100% Local-first
                       </div>
                     </div>
                   </div>
@@ -2789,7 +2789,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                               </div>
                               <div style={{ fontSize: '0.76rem', color: 'var(--text-secondary)' }}>
                                 Latest version: <strong style={{ color: 'var(--gold-primary)' }}>{updateResult.latestVersion}</strong>
-                                {updateResult.publishedAt && ` â€¢ Released ${new Date(updateResult.publishedAt).toLocaleDateString()}`}
+                                {updateResult.publishedAt && ` • Released ${new Date(updateResult.publishedAt).toLocaleDateString()}`}
                               </div>
                             </div>
                           </div>
@@ -2885,7 +2885,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                               ibuku is up to date
                             </div>
                             <div style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>
-                              You are running the latest release ({updateResult.currentVersion}) â€¢ Checked {new Date(updateResult.checkedAt).toLocaleTimeString()}
+                              You are running the latest release ({updateResult.currentVersion}) • Checked {new Date(updateResult.checkedAt).toLocaleTimeString()}
                             </div>
                           </div>
                         </div>
@@ -3497,7 +3497,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
 
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                     <span style={{ opacity: 0.8 }}>ibuku v{appVersion}</span>
-                    <span>â€¢</span>
+                    <span>•</span>
                     <a
                       href={GITHUB_REPO_URL}
                       target="_blank"
