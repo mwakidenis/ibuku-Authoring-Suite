@@ -14,4 +14,5 @@ jobs:
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url: ssh://mwakidenis@git.code.sf.net/p/ibuku-authoring-suite/code
+          ssh_username: "mwakidenis"
           ssh_private_key: ${{ secrets.SF_SSH_PRIVATE_KEY }}
