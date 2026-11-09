@@ -67,7 +67,7 @@ export const StatusBar: React.FC = () => {
         title="Minimalist Writing Mode (Press Alt+M to toggle)"
       >
         <span>{totalWordCount.toLocaleString()} {t('statusBar.words')}</span>
-        {activeChapter && <span style={{ opacity: 0.8 }}> â€¢ {activeChapter.wordCount.toLocaleString()} w</span>}
+        {activeChapter && <span style={{ opacity: 0.8 }}> • {activeChapter.wordCount.toLocaleString()} w</span>}
       </div>
     );
   }
@@ -172,9 +172,9 @@ export const StatusBar: React.FC = () => {
         <div className="status-item shortcut-hints" title="Global keyboard shortcuts">
           <Keyboard size={12} style={{ opacity: 0.6 }} />
           <span>{formatShortcut('Ctrl+S')} Save</span>
-          <span style={{ opacity: 0.4 }}>â€¢</span>
+          <span style={{ opacity: 0.4 }}>•</span>
           <span>{formatShortcut('Ctrl+\\')} Sidebar</span>
-          <span style={{ opacity: 0.4 }}>â€¢</span>
+          <span style={{ opacity: 0.4 }}>•</span>
           <span>{formatShortcut('Ctrl+O')} Open</span>
         </div>
       </div>
