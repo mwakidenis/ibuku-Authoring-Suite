@@ -338,7 +338,7 @@ const SelectiveRestoreDialog: React.FC<SelectiveRestoreDialogProps> = ({
                 </span>
               </div>
               <p className="snapshots-modal-subtitle">
-                Target: <strong>"{snapshot.name}"</strong> â€¢ Choose which items to restore
+                Target: <strong>"{snapshot.name}"</strong> • Choose which items to restore
               </p>
             </div>
           </div>
@@ -425,7 +425,7 @@ const SelectiveRestoreDialog: React.FC<SelectiveRestoreDialogProps> = ({
                       Manuscript Chapters & Text
                     </span>
                     <span className="snapshot-restore-card-subtitle">
-                      {chapters.length} {chapters.length === 1 ? 'chapter' : 'chapters'} â€¢ {(snapshot.totalWordCount || 0).toLocaleString()} words
+                      {chapters.length} {chapters.length === 1 ? 'chapter' : 'chapters'} • {(snapshot.totalWordCount || 0).toLocaleString()} words
                     </span>
                   </div>
                 </div>
@@ -1126,7 +1126,7 @@ export const SnapshotsModal: React.FC = () => {
                 </span>
               </div>
               <p className="snapshots-modal-subtitle">
-                Manuscript Time Machine â€¢ Preserve milestones, revisions, and story states
+                Manuscript Time Machine • Preserve milestones, revisions, and story states
               </p>
             </div>
           </div>
