@@ -16,7 +16,7 @@
 
 <br />
 
-*Note: This software was developed with the assistant of AI. Certain parts of the code have been generated using LLMs. However, the software does not collect any data from the user. The software is open source and free to use. The software is licensed under the AGPL v3 license.*
+*Note: This software was developed with the assistance of AI. Certain parts of the code have been generated using LLMs. However, the software does not collect any data from the user. The software is open source and free to use. The software is licensed under the AGPL v3 license.*
 
 ---
 
@@ -35,8 +35,6 @@ Writing a novel shouldn't require juggling four separate paid subscriptions. **i
 * **100% GenAI-Free. No LLMs. No text generation. Built exclusively for human writers.**
 * **No Cloud Lock-in**: Your work is saved in the open `.ibuku` format (a standard ZIP archive containing plain JSON and raw XHTML).
 * **Optional Private Sync**: Sync directly to your own self-hosted WebDAV server (Nextcloud, ownCloud, Fastmail) with end-to-end credential storage.
-
-*NOTE: The Website and web-app use SimpleAnalytics to check the number of visitor that are accessing the website. SimpleAnalytics is a privacy-focuse analytics platform. The desktop app doesn't use any analytics. No data related to the way the app is being used, the content that is being written or the user is being collected or stored anywhere.* 
 
 ---
 
@@ -207,6 +205,4 @@ You are free to use, modify, and redistribute this software in accordance with t
 
 ---
 
-<div align="center">
-  <sub>Crafted with passion for novelists, storytellers, and authors everywhere.</sub>
-</div>
+<sub>authored & maintained by mwakidenis</sub>
