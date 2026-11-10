@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use ibuku, please cite it as below."
+authors:
+  - given-names: Denis
+    family-names: Mwaki
+    affiliation: "Independent"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+title: "ibuku — The Premier All-in-One Authoring & Publishing Studio for Novelists"
+version: 1.0.1
+date-released: 2026-11-09
+doi: ""
+repository-code: "https://github.com/mwakidenis/ibuku"
+url: "https://github.com/mwakidenis/ibuku"
+keywords:
+  - novel-writing
+  - authoring-suite
+  - epub-3
+  - worldbuilding
+  - local-first
+license: AGPL-3.0-or-later
+contact:
+  - email: mwakidenis@gmail.com
+    name: Denis Mwaki
