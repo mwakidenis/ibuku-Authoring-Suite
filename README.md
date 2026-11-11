@@ -12,7 +12,7 @@
 
   <p>👇 Click below to download the latest desktop build directly from SourceForge:</p>
 
-  <a>
+  <a href="https://sourceforge.net/projects/ibuku-authoring-suite/">
     <img src="https://img.shields.io/badge/Download_on-SourceForge-0080ff?style=for-the-badge&logo=sourceforge&logoColor=white" alt="SourceForge Badge" style="vertical-align: middle;" />
   </a>
 
