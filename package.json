@@ -37,7 +37,6 @@
     "record:2k": "node promo_video_2/record_2k.js"
   },
   "dependencies": {
-    "@rolldown/binding-win32-x64-msvc": "^1.2.16",
     "@tauri-apps/api": "^2.0.0",
     "@tauri-apps/plugin-http": "^2.6.0",
     "canvas-confetti": "^1.9.4",
