@@ -1,3 +1,2 @@
 name = "ibuku"
 pages_build_output_dir = "dist"
-build_command = "npm ci --no-optional && npm run build"
